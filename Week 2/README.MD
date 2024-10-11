@@ -17,15 +17,27 @@ rustc Four.rs
 ```
 
 ### Style 5 [Procedural Abstractions + Sequence of Commands]
+```
 rustc Five.rs
+```
+```
 ./Five ../pride-and-prejudice.txt
+```
 
 ### Style 6 [Functional Abstractions + Pipeline]
+```
 rustc Six.rs
+```
+```
 ./Six ../pride-and-prejudice.txt
+```
 
 ### Style 7 [Code Golf]
+```
 rustc Seven.rs
+```
+```
 ./Seven ../pride-and-prejudice.txt
+```
 
 Output will be printed in Shell
