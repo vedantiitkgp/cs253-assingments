@@ -4,11 +4,17 @@ https://www.rust-lang.org/tools/install
 
 
 ## Compiling and Running Instructions
+```
 cd Week\ 2/
+```
 
 ### Style 4 [No Abstractions]
+```
 rustc Four.rs
+```
+```
 ./Four ../pride-and-prejudice.txt
+```
 
 ### Style 5 [Procedural Abstractions + Sequence of Commands]
 rustc Five.rs
