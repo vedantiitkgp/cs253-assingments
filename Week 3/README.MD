@@ -17,11 +17,18 @@ rustc Eight.rs
 ```
 
 ### Style 9 [Additional Parameter Function]
+```
 rustc Nine.rs
+```
+```
 ./Nine ../pride-and-prejudice.txt
+```
 
 ### Style 10 [Monadic ]
+```
 rustc Ten.rs
+```
+```
 ./Ten ../pride-and-prejudice.txt
-
+```
 Output will be printed in Shell
