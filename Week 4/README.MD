@@ -16,18 +16,12 @@ rustc Twelve.rs
 ./Twelve ../pride-and-prejudice.txt
 ```
 
-### Style 13 [Closed Maps]
+### Style 13 + Exercise [ 13.1 + 13.2 +13.3 ] [Closed Maps]
 ```
 rustc Thirteen.rs
 ```
 ```
 ./Thirteen ../pride-and-prejudice.txt
-```
-
-Exercises for 13.2 and 13.3
-Added in the Thirteen.py
-```
-python3 Thirteen.py ../pride-and-prejudice.txt
 ```
 
 

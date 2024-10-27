@@ -62,7 +62,8 @@ fn main() {
     let mut word_freqs_obj: HashMap<String, u32> = HashMap::new();
 
     // Processing
-    if let Some(data) = data_storage_obj.get("data") {
+    let this = &data_storage_obj; // Self-reference simulation
+    if let Some(data) = this.get("data") {
         let words: Vec<&str> = data.split_whitespace().collect();
         for word in words {
             if !is_stop_word(&stop_words_obj, word) {
@@ -71,8 +72,13 @@ fn main() {
         }
     }
 
-    // Sorting and printing
-    let sorted_freqs = sorted(&word_freqs_obj);
+    // Adding `top25` method after line #46
+    top25(&word_freqs_obj);
+}
+
+// Method-like function for word_freqs_obj
+fn top25(word_freqs: &HashMap<String, u32>) {
+    let sorted_freqs = sorted(word_freqs);
     for (word, count) in sorted_freqs.iter().take(25) {
         println!("{} - {}", word, count);
     }
