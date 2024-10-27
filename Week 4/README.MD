@@ -25,12 +25,13 @@ rustc Thirteen.rs
 ```
 
 
-### Style 15 [ Hollywood ]
+### Style 15 + Exercise[15.1 + 15.2] [ Hollywood ]
 ```
 rustc Fifteen.rs
 ```
 ```
 ./Fifteen ../pride-and-prejudice.txt
 ```
+Will also print Non stop words containing Z
 
 Output will be printed in Shell

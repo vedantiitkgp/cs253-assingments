@@ -173,11 +173,38 @@ impl WordFrequencyCounter {
     }
 }
 
+struct WordsWithZCounter {
+    z_word_count: Rc<RefCell<u32>>,
+}
+
+impl WordsWithZCounter {
+    fn new(wfapp: &mut WordFrequencyFramework, data_storage: &Rc<RefCell<DataStorage>>) -> Rc<RefCell<Self>> {
+        let counter = Rc::new(RefCell::new(WordsWithZCounter {
+            z_word_count: Rc::new(RefCell::new(0)),
+        }));
+        
+        let counter_clone = Rc::clone(&counter);
+        data_storage.borrow_mut().register_for_word_event(move |word| {
+            if word.contains('z') {
+                *counter_clone.borrow_mut().z_word_count.borrow_mut() += 1;
+            }
+        });
+        
+        let counter_clone = Rc::clone(&counter);
+        wfapp.register_for_end_event(move |_| {
+            println!("Number of non-stop words containing 'z': {}", counter_clone.borrow().z_word_count.borrow());
+        });
+        
+        counter
+    }
+}
+
 fn main() {
     let mut wfapp = WordFrequencyFramework::new();
     let stop_word_filter = StopWordFilter::new(&mut wfapp);
     let data_storage = DataStorage::new(&mut wfapp, stop_word_filter);
     let _word_freq_counter = WordFrequencyCounter::new(&mut wfapp, &data_storage);
+    let _words_with_z_counter = WordsWithZCounter::new(&mut wfapp, &data_storage);
 
     // Run the framework with the file path provided as command-line argument
     let args: Vec<String> = std::env::args().collect();
