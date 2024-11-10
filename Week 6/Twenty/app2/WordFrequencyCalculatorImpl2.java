@@ -1,4 +1,3 @@
-package Twenty;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -6,7 +5,8 @@ import java.util.Map.Entry;
 import java.util.stream.Collectors;
 
 public class WordFrequencyCalculatorImpl2 implements WordFrequencyCalculator {
-    @Override
+    public WordFrequencyCalculatorImpl2(){}
+    
     public List<Entry<String, Integer>> getTop25(List<String> words) {
         Map<String, Integer> wordFrequencies = new HashMap<>();
 

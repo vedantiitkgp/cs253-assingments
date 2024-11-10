@@ -1,3 +1,4 @@
+package Seventeen;
 import java.io.*;
 import java.lang.reflect.*;
 import java.util.*;
@@ -13,7 +14,7 @@ public class Seventeen {
         String className = scanner.nextLine();
         displayClassInfo(className);
         System.out.println("\n------------------------------------------------------------\n");
-        
+
         // Run the WordFrequencyController
         new WordFrequencyController(args[0]).run();
     }

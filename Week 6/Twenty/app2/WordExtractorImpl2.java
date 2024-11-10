@@ -1,10 +1,12 @@
-package Twenty;
+package Twenty.app2;
 import java.io.*;
 import java.util.*;
 
+import Twenty.interfaces.WordExtractor;
+
 public class WordExtractorImpl2 implements WordExtractor {
-    @Override
-    public List<String> extractWords(String filePath) throws IOException {
+    public WordExtractorImpl2(){}
+    public List<String> extractWords(String filePath, String stopWordPath) throws IOException {
         List<String> words = new ArrayList<>();
         // Different word extraction strategy
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
