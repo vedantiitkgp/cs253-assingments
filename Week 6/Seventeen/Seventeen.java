@@ -1,4 +1,3 @@
-package Seventeen;
 import java.io.*;
 import java.lang.reflect.*;
 import java.util.*;
@@ -140,7 +139,7 @@ class StopWordManager extends TFExercise {
     public StopWordManager() throws IOException {
         this.stopWords = new HashSet<>();
         
-        Scanner f = new Scanner(new File("../stop_words.txt"), "UTF-8");
+        Scanner f = new Scanner(new File("../../stop_words.txt"), "UTF-8");
         try {
             f.useDelimiter(",");
             while (f.hasNext()) {
