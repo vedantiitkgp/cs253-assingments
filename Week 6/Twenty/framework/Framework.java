@@ -31,7 +31,6 @@ class Main {
 
         // Get the URL for the class from the config file
         String classUrlStr = properties.getProperty(name);
-        System.out.println(classUrlStr);
         if (classUrlStr == null) {
             System.out.println("Class URL not found in configuration for: " + name);
             return;
@@ -45,16 +44,18 @@ class Main {
             e.printStackTrace();
             return;
         }
-        System.out.println(classUrlStr);
         URL[] classUrls = {classUrl};
         URLClassLoader cloader = new URLClassLoader(classUrls);
 
         // Load and instantiate the class
         try {
-            System.out.println(name);
             if(name.equals("golf")){
                name = "1";
             }
+            else{
+                name="2";
+            }
+
             String wordExtractorClass = "WordExtractorImpl" + name;
             String wordFreqCalculatorClass = "WordFrequencyCalculatorImpl" + name;
             Class<?> wordExtractorcls = cloader.loadClass(wordExtractorClass);
