@@ -49,7 +49,7 @@ class Main {
 
         // Load and instantiate the class
         try {
-            if(name.equals("golf")){
+            if(name.equals("letterbox")){
                name = "1";
             }
             else{
